@@ -35,7 +35,7 @@ include "./api/base.php"
                             <i class='bx bx-news'></i>
                             <i class='bx bxs-news'></i>
                         </div>
-                        <span class="link hide">news editor</span>
+                        <span class="link hide">最新消息管理</span>
                     </a>
                 </li>
                 <li class="tooltip-element" data-tooltip="1">
@@ -44,22 +44,22 @@ include "./api/base.php"
                             <i class='bx bx-comment-dots'></i>
                             <i class='bx bxs-comment-dots'></i>
                         </div>
-                        <span class="link hide">Questionnaire editor</span>
+                        <span class="link hide">問巻管理</span>
                     </a>
                 </li>
                 <li class="tooltip-element" data-tooltip="2">
-                    <a href="?do=po" data-active="2">
+                    <a href="?do=admin" data-active="2">
                         <div class="icon">
                         <i class='bx bx-user-plus' ></i>
                         <i class='bx bxs-user-plus' ></i>
                         </div>
-                        <span class="link hide">Account Management</span>
+                        <span class="link hide">帳號管理</span>
                     </a>
                 </li>
                 <div class="tooltip">
-                    <span class="show">News editor</span>
-                    <span>Questionnaire editor</span>
-                    <span>Account Management</span>
+                    <span class="show">最新消息管理</span>
+                    <span>問巻管理</span>
+                    <span>帳號管理</span>
                 </div>
             </ul>
 
