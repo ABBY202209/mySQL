@@ -89,6 +89,8 @@ include "./api/base.php"
             if (isset($_SESSION['login'])) {
                 # code...
                 //如果是管理者
+                // echo $_SESSION['login'];
+
                 if ($_SESSION['login'] == 'admin') {
                     # code...
             

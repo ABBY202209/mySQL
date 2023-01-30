@@ -1,3 +1,4 @@
+
 // nav
 const shrink_btn = document.querySelector(".shrink-btn");
 //sidebar-links
@@ -34,17 +35,22 @@ function moveActiveTab() {
 
   active_tab.style.top = `${topPosition}px`;
 }
+remove();
+function remove() {
+  sidebar_links.forEach((sideLink) => sideLink.classList.remove("active"));
+  
+}
 function changeLink() {
-  // console.log("hi sidebar_links");
+  console.log("hi sidebar_links");
   sidebar_links.forEach((sideLink) => sideLink.classList.remove("active"));
   this.classList.add("active");
 
   activeIndex = this.dataset.active;
-  // console.log("activeIndex",activeIndex);
-
+  
   moveActiveTab();
   //保留
   localStorage.setItem("activeIndex", activeIndex);
+  // console.log("activeIndex",activeIndex);
 }
 const storedActiveIndex = localStorage.getItem("activeIndex");
 

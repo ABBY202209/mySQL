@@ -1,3 +1,6 @@
+<?php
+include "./api/base.php"
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -90,7 +93,7 @@
                 //如果是管理者
                 if (!$_SESSION['login'] == 'admin') {
                     # code...
-            
+                    echo $_SESSION['login'];
                     ?>
                     <a href="#" class="account tooltip-element" data-tooltip="1">
                         <i class='bx bx-user'></i>
