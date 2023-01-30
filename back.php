@@ -1,6 +1,6 @@
 <?php
 include "./api/base.php"
-?>
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +14,9 @@ include "./api/base.php"
     <!-- css -->
     <link rel="stylesheet" href="./css/styles.css">
     <!-- jq -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+        integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -50,8 +52,8 @@ include "./api/base.php"
                 <li class="tooltip-element" data-tooltip="2">
                     <a href="?do=admin" data-active="2">
                         <div class="icon">
-                        <i class='bx bx-user-plus' ></i>
-                        <i class='bx bxs-user-plus' ></i>
+                            <i class='bx bx-user-plus'></i>
+                            <i class='bx bxs-user-plus'></i>
                         </div>
                         <span class="link hide">帳號管理</span>
                     </a>
@@ -90,7 +92,7 @@ include "./api/base.php"
                 # code...
                 //如果是管理者
                 // echo $_SESSION['login'];
-
+            
                 if ($_SESSION['login'] == 'admin') {
                     # code...
             
@@ -105,9 +107,14 @@ include "./api/base.php"
                                 <h3>
                                     <?= $_SESSION['login']; ?>
                                 </h3>
-                                <a href="./back.php">
-                                    <h5>Admin</h5>
-                                </a>
+                                <?php
+                                $current_page = basename($_SERVER['PHP_SELF']);
+                                if ($current_page == "index.php") {
+                                    echo '<a href="./back.php"><h5>Admin</h5></a>';
+                                } else {
+                                    echo '<a href="./index.php"><h5>回首頁</h5></a>';
+                                }
+                                ?>
                             </div>
                         </div>
                         <a href="./api/logout.php" class="log-out">
@@ -158,18 +165,18 @@ include "./api/base.php"
     </nav>
     <main>
         <div class="">
-			<?php
-			    $do = $_GET['do'] ?? 'news';
-				// echo $do;
-				$file = "./back/" . $do . ".php";
-				if (file_exists($file)) {
-					# code...
-					include $file;
-				} else {
-				include "./back/news.php";
-				}
-			?>
-		</div>
+            <?php
+            $do = $_GET['do'] ?? 'news';
+            // echo $do;
+            $file = "./back/" . $do . ".php";
+            if (file_exists($file)) {
+                # code...
+                include $file;
+            } else {
+                include "./back/news.php";
+            }
+            ?>
+        </div>
     </main>
 
     <script src="./js/js.js"></script>
