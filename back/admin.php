@@ -182,14 +182,21 @@
 </head>
 
 <body>
+<?php
+    //頁數
+    $all = $User->count();
+    $div = 6;
+    $pages = ceil($all / $div);
+    $now = $_GET['p'] ?? 1;
+    $start = ($now - 1) * $div;
+    $rows = $User->all(" limit $start , $div");
+    ?>
     <div class="login-main">
         <div class="admin-div">
 
             <div class="fields">
                 <legend><i class='bx bx-user-pin'></i>帳號管理</legend>
                 <form action="./api/del_acc.php" method="post">
-                    <?php
-                    $rows = $User->all(); ?>
                     <table>
                         <tr>
                             <th>帳號</th>
@@ -208,6 +215,24 @@
                             };
                         ?>
                     </table>
+                    <div class="ct">
+                    <?php
+                    if (($now - 1) > 0) {
+                        $pre = $now - 1;
+                        echo "<a href='back.php?do=news&p=$pre'><</a>";
+                    }
+                    for ($i = 1; $i <= $pages; $i++) {
+                        # code...
+                        $size = ($i == $now) ? "24px" : "16px";
+                        echo "<a href='back.php?do=news&p=$i' style='font-size:$size'>$i</a>";
+                    }
+                    if (($now + 1) <= $pages) {
+                        # code...
+                        $next = $now + 1;
+                        echo "<a href='back.php?do=news&p=$next'>></a>";
+                    }
+                    ?>
+                </div>
             </div>
             <div class="btn">
                 <input class="signin-button login" type="submit" value="submit">
