@@ -36,10 +36,11 @@ function moveActiveTab() {
   active_tab.style.top = `${topPosition}px`;
 }
 remove();
+
 function remove() {
   sidebar_links.forEach((sideLink) => sideLink.classList.remove("active"));
-  
 }
+
 function changeLink() {
   console.log("hi sidebar_links");
   sidebar_links.forEach((sideLink) => sideLink.classList.remove("active"));
@@ -48,19 +49,22 @@ function changeLink() {
   activeIndex = this.dataset.active;
   
   moveActiveTab();
-  //保留
   localStorage.setItem("activeIndex", activeIndex);
-  // console.log("activeIndex",activeIndex);
 }
+
 const storedActiveIndex = localStorage.getItem("activeIndex");
 
-if (storedActiveIndex) {
-activeIndex = storedActiveIndex;
-moveActiveTab();
-sidebar_links[activeIndex].classList.add("active");
+if (window.location.href.endsWith("do=news")) {
+  activeIndex = 0;
+} else if (storedActiveIndex) {
+  activeIndex = storedActiveIndex;
 }
 
+moveActiveTab();
+sidebar_links[activeIndex].classList.add("active");
+
 sidebar_links.forEach((link) => link.addEventListener("click", changeLink));
+
 
 function showTooltip() {
   // console.log("hi show");

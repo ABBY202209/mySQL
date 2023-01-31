@@ -110,9 +110,9 @@ include "./api/base.php"
                                 <?php
                                 $current_page = basename($_SERVER['PHP_SELF']);
                                 if ($current_page == "index.php") {
-                                    echo '<a href="./back.php"><h5>Admin</h5></a>';
+                                    echo '<a href="./back.php?do=news"><h5>admin</h5></a>';
                                 } else {
-                                    echo '<a href="./index.php"><h5>回首頁</h5></a>';
+                                    echo '<a href="./index.php?do=news"><h5>回首頁</h5></a>';
                                 }
                                 ?>
                             </div>
