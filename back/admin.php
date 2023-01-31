@@ -182,7 +182,7 @@
 </head>
 
 <body>
-<?php
+    <?php
     //頁數
     $all = $User->count();
     $div = 6;
@@ -206,38 +206,43 @@
                         <?php
                         foreach ($rows as $row) {
                             ?>
-                                <tr>
-                                    <td><?= $row['acc']; ?></td>
-                                    <td><?=str_repeat("*",strlen($row['pw'])); ?></td>
-                                    <td><input type="checkbox" name="del[]" value="<?=$row['id'];?>"></td>
-                                </tr>
+                            <tr>
+                                <td>
+                                    <?= $row['acc']; ?>
+                                </td>
+                                <td>
+                                    <?= str_repeat("*", strlen($row['pw'])); ?>
+                                </td>
+                                <td><input type="checkbox" name="del[]" value="<?= $row['id']; ?>"></td>
+                            </tr>
                             <?php
-                            };
+                        }
+                        ;
                         ?>
                     </table>
                     <div class="ct">
-                    <?php
-                    if (($now - 1) > 0) {
-                        $pre = $now - 1;
-                        echo "<a href='back.php?do=news&p=$pre'><</a>";
-                    }
-                    for ($i = 1; $i <= $pages; $i++) {
-                        # code...
-                        $size = ($i == $now) ? "24px" : "16px";
-                        echo "<a href='back.php?do=news&p=$i' style='font-size:$size'>$i</a>";
-                    }
-                    if (($now + 1) <= $pages) {
-                        # code...
-                        $next = $now + 1;
-                        echo "<a href='back.php?do=news&p=$next'>></a>";
-                    }
-                    ?>
-                </div>
+                        <?php
+                        if ($pages > 1) {
+                            if (($now - 1) > 0) {
+                                $pre = $now - 1;
+                                echo "<a href='back.php?do=admin&p=$pre'><</a>";
+                            }
+                            for ($i = 1; $i <= $pages; $i++) {
+                                $size = ($i == $now) ? "24px" : "16px";
+                                echo "<a href='back.php?do=admin&p=$i' style='font-size:$size'>$i</a>";
+                            }
+                            if (($now + 1) <= $pages) {
+                                $next = $now + 1;
+                                echo "<a href='back.php?do=admin&p=$next'>></a>";
+                            }
+                        }
+                        ?>
+                    </div>
             </div>
             <div class="btn">
                 <input class="signin-button login" type="submit" value="submit">
                 <input class="signin-button reset" type="reset" value="reset">
-                
+
             </div>
             </form>
 
@@ -300,7 +305,7 @@
                     // if (檢查帳號是否重覆) {
                     if (result.status === 'error') {
                         alert("帳號重覆");
-                        
+
 
                     } else {
                         //新增帳號
