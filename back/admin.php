@@ -311,7 +311,8 @@
                         //新增帳號
                         $.post("./api/reg.php", user, () => {
                             alert("新增完成");
-                            reset();
+                            // reset();
+                            window.location.reload();//刷新頁面
                         })
                     }
                 })
