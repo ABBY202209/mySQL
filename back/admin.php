@@ -14,7 +14,7 @@
         <div class="admin-div">
             <div class="fields">
                 <legend><i class='bx bx-user-pin'></i>帳號管理</legend>
-                <form action="./api/del_acc.php" method="post">
+                <form action="./api/edit.php" method="post">
                     <table>
                         <tr>
                             <th>帳號</th>
@@ -60,6 +60,7 @@
                     </div>
             </div>
             <div class="btn">
+                <input type="hidden" name="table" value="User">
                 <input class="signin-button login" type="submit" value="submit">
                 <input class="signin-button reset" type="reset" value="reset">
 
