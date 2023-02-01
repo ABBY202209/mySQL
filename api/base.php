@@ -8,11 +8,11 @@ class DB{
     protected $dsn="mysql:host=localhost;charset=utf8;dbname=s1110407";
     
     //將分類用成一個陣列
-    
+        
     public function __construct($table){
         $this->table=$table;
-        $this->pdo=new PDO($this->dsn,'s1110407','s1110407');
-        // $this->pdo=new PDO($this->dsn,'root','');
+        // $this->pdo=new PDO($this->dsn,'s1110407','s1110407');
+        $this->pdo=new PDO($this->dsn,'root','');
     }
 
     public function find($id){

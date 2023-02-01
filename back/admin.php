@@ -1,191 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
-    <style>
-        .login-main {
-            font-family: 'Poppins', 'Noto Sans TC';
-            min-height: 100vh;
-            display: flex;
-            position: relative;
-            margin: 0;
-            height: 100vh;
-            overflow: hidden;
-            font-weight: 700;
-            align-items: center;
-            justify-content: space-around;
-            color: #302e4d;
-            min-width: 150vh;
-        }
-
-        .admin-div {
-            width: 430px;
-            height: 100%;
-            padding: 50px 35px 35px 35px;
-            /* border-radius: 40px; */
-            /* background-color: #ecf0f3; */
-
-        }
-
-        .admin-div .fields legend {
-            font-size: 30px;
-            width: 200px;
-            height: 60px;
-            border-radius: 10px;
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--main-color-dark);
-            text-align: center;
-            background-color: #ecf0f3;
-            box-shadow: 1px 1px 4px #b1b1b1, -1px -1px 4px #fff;
-            display: flex;
-            align-items: center;
-            margin-bottom: 30px;
-            border-radius: 20px;
-        }
-
-        .admin-div .fields legend i {
-            font-size: 40px;
-        }
-
-        table {
-            border-collapse: collapse;
-            width: 100%;
-
-        }
-
-        th,
-        td {
-            /* border: 1px solid #dddddd; */
-            padding: 8px;
-            text-align: center;
-            box-shadow: 0.5px 0.5px 2px #b1b1b1, -0.5px -0.5px 2px #fff;
-            border-radius: 10px;
-
-        }
-
-        th {
-            color: #fff;
-            text-align: center;
-            background-color: var(--text-black-700);
-            font-weight: 500;
-            font-size: 18px;
-        }
-
-        td:hover {
-            background-color: #728C8A;
-            box-shadow: inset 0.5px 0.5px 0.5px #cbced1, inset -0.5px -0.5px 0.5px #fff
-        }
-
-        .login-div {
-            width: 430px;
-            height: 500px;
-            padding: 50px 35px 35px 35px;
-            border-radius: 40px;
-            background-color: #ecf0f3;
-            box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
-        }
-
-        .log {
-            font-size: 4rem;
-            text-align: center;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin: 0 auto;
-            box-shadow: 0px 0px 2px #5f5f5f, 0px 0px 0px 5px #ecf0f3, 8px 8px 15px #a7aaaf, -8px -8px 15px #fff;
-        }
-
-        .fields {
-            width: 100%;
-            padding: 0px 5px 5px 5px;
-
-        }
-
-        .fields input {
-            border: none;
-            outline: none;
-            background: none;
-            font-size: 18px;
-            color: #555;
-            padding: 20px 10px 20px 5px;
-        }
-
-        .fields i {
-            font-size: 22px;
-            margin: 0 10px -3px 25px;
-        }
-
-        .username,
-        .password {
-            margin-bottom: 30px;
-            border-radius: 20px;
-            box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
-
-        }
-
-        .signin-button {
-            outline: none;
-            border: none;
-            cursor: pointer;
-            width: 40%;
-            height: 60px;
-            border-radius: 30px;
-            font-size: 20px;
-            font-weight: 700;
-            color: #fff;
-            text-align: center;
-            background-color: var(--main-color-dark);
-            box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #fff;
-            transition: all 0.5s;
-            margin-left: 20px;
-        }
-
-        .signin-button:hover.login {
-            background-color: #B2BF4E;
-        }
-
-        .signin-button:hover.reset {
-            background-color: #D95959;
-        }
-
-        .signin-button:active {
-            background-color: var(--main-color-light);
-            box-shadow: inset 2px 2px 2px #cbced1, inset -2px -2px 2px #fff;
-        }
-
-        .btn {
-            display: flex;
-            justify-content: space-evenly;
-        }
-
-        .link {
-            padding-top: 10px;
-            text-align: center;
-        }
-
-        .link i {
-            font-weight: 700;
-        }
-
-        .link a {
-            font-size: 16px;
-            color: #BF1304;
-
-        }
-    </style>
-
-</head>
+<link rel="stylesheet" href="./css/main.css">
 
 <body>
     <?php
     //頁數
     $all = $User->count();
-    $div = 6;
+    $div = 5;
     $pages = ceil($all / $div);
     $now = $_GET['p'] ?? 1;
     $start = ($now - 1) * $div;
@@ -193,7 +12,6 @@
     ?>
     <div class="login-main">
         <div class="admin-div">
-
             <div class="fields">
                 <legend><i class='bx bx-user-pin'></i>帳號管理</legend>
                 <form action="./api/del_acc.php" method="post">
@@ -211,7 +29,9 @@
                                     <?= $row['acc']; ?>
                                 </td>
                                 <td>
-                                <input type="password" name="pw[]" value="<?= $row['pw']; ?>">
+                                    <div class="password">
+                                        <input type="password" name="pw[]" value="<?= $row['pw']; ?>">
+                                    </div>
                                 </td>
                                 <td><input type="checkbox" name="del[]" value="<?= $row['id']; ?>"></td>
                             </tr>
@@ -220,7 +40,7 @@
                         ;
                         ?>
                     </table>
-                    <div class="ct">
+                    <div class="pages">
                         <?php
                         if ($pages > 1) {
                             if (($now - 1) > 0) {
