@@ -142,7 +142,7 @@
             background-color: var(--main-color-dark);
             box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #fff;
             transition: all 0.5s;
-            mlmargin-left: 20px;
+            margin-left: 20px;
         }
 
         .signin-button:hover.login {
@@ -211,7 +211,7 @@
                                     <?= $row['acc']; ?>
                                 </td>
                                 <td>
-                                    <?= str_repeat("*", strlen($row['pw'])); ?>
+                                <input type="password" name="pw[]" value="<?= $row['pw']; ?>">
                                 </td>
                                 <td><input type="checkbox" name="del[]" value="<?= $row['id']; ?>"></td>
                             </tr>
