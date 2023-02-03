@@ -41,7 +41,7 @@ foreach ($_POST['id'] as $idx => $id) {
                 $row['sh'] = (isset($_POST['sh']) && $_POST['sh'] == $id) ? 1 : 0; //判斷是否一樣的，如果是一樣的是1；不一樣的改0
                 break;
 
-            case "Admin":
+            case "User":
                 # code...
                 $row['acc'] = $_POST['acc'][$idx];
                 $row['pw'] = $_POST['pw'][$idx];
@@ -67,6 +67,7 @@ foreach ($_POST['id'] as $idx => $id) {
 
         // $Title->save($row);
         $$table->save($row);
+        
     }
 }
 to("../back.php?do=" . lcfirst($table));

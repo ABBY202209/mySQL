@@ -26,14 +26,16 @@
                             ?>
                             <tr>
                                 <td>
-                                    <?= $row['acc']; ?>
+                                <input type="text" name="acc[]" value="<?=$row['acc'];?>" style="width:95%">
                                 </td>
+                                
                                 <td>
                                     <div class="password">
                                         <input type="password" name="pw[]" value="<?= $row['pw']; ?>">
                                     </div>
                                 </td>
                                 <td><input type="checkbox" name="del[]" value="<?= $row['id']; ?>"></td>
+                                <input type="hidden" name="id[]" value="<?=$row['id'];?>">
                             </tr>
                             <?php
                         }
@@ -45,15 +47,15 @@
                         if ($pages > 1) {
                             if (($now - 1) > 0) {
                                 $pre = $now - 1;
-                                echo "<a href='back.php?do=admin&p=$pre'><</a>";
+                                echo "<a href='back.php?do=user&p=$pre'><</a>";
                             }
                             for ($i = 1; $i <= $pages; $i++) {
                                 $size = ($i == $now) ? "24px" : "16px";
-                                echo "<a href='back.php?do=admin&p=$i' style='font-size:$size'>$i</a>";
+                                echo "<a href='back.php?do=user&p=$i' style='font-size:$size'>$i</a>";
                             }
                             if (($now + 1) <= $pages) {
                                 $next = $now + 1;
-                                echo "<a href='back.php?do=admin&p=$next'>></a>";
+                                echo "<a href='back.php?do=user&p=$next'>></a>";
                             }
                         }
                         ?>

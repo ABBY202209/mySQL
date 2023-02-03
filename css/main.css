@@ -5,9 +5,7 @@
     position: relative;
     margin: 0;
     height: 100vh;
-    overflow: hidden;
     font-weight: 700;
-    align-items: center;
     justify-content: space-around;
     color: #302e4d;
     min-width: 150vh;
@@ -144,6 +142,7 @@
 .login-div {
     width: 430px;
     height: 500px;
+    margin-top: 60px;
     padding: 50px 35px 35px 35px;
     border-radius: 40px;
     background-color: #ecf0f3;

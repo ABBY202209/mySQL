@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="./css/main.css">
+
 <body>
     <?php
     //頁數
@@ -31,7 +32,7 @@
                                     <?= $key + 1; ?>
                                 </td>
                                 <td>
-                                    <a href="index.php?do=modal/news.php">
+                                    <a href="back.php?do=modal_news">
                                         <?= $row['title']; ?>
                                     </a>
                                 </td>
@@ -45,7 +46,7 @@
                         ?>
                     </table>
                     <!-- 分頁 -->
-                    <div class="ct">
+                    <div class="pages">
                         <?php
                         if (($now - 1) > 0) {
                             $pre = $now - 1;
@@ -69,7 +70,10 @@
 
                 </form>
             </div>
-            <div class="login-div">
+            
+
+        </div>
+        <div class="login-div">
                 <!-- <div class="log"><i class='bx bx-user-circle'></i></div> -->
                 <div class="fields">
                     <div class="username">
@@ -96,7 +100,7 @@
 
 
             </div>
-        </div>
+            </div>
 </body>
 
 </html>

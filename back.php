@@ -50,7 +50,7 @@ include "./api/base.php"
                     </a>
                 </li>
                 <li class="tooltip-element" data-tooltip="2">
-                    <a href="?do=admin" data-active="2">
+                    <a href="?do=user" data-active="2">
                         <div class="icon">
                             <i class='bx bx-user-plus'></i>
                             <i class='bx bxs-user-plus'></i>
@@ -168,7 +168,13 @@ include "./api/base.php"
             <?php
             $do = $_GET['do'] ?? 'news';
             // echo $do;
-            $file = "./back/" . $do . ".php";
+            if ($do='modal_news') {
+                # code...
+                $file="./modal/". $do . ".php";
+            }else{
+                $file = "./back/" . $do . ".php";
+            }
+            
             if (file_exists($file)) {
                 # code...
                 include $file;
