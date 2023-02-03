@@ -17,9 +17,9 @@
                 <form action="./api/edit.php" method="post">
                     <table>
                         <tr>
-                            <th>帳號</th>
-                            <th>密碼</th>
-                            <th>刪除</th>
+                            <th style="width: 40%;">帳號</th>
+                            <th style="width: 40%;">密碼</th>
+                            <th style="width: 15%;">刪除</th>
                         </tr>
                         <?php
                         foreach ($rows as $row) {

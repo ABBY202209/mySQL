@@ -28,17 +28,20 @@
                         foreach ($rows as $key => $row) {
                             ?>
                             <tr>
-                                <td>
+                                <td style="width: 15%;">
                                     <?= $key + 1; ?>
                                 </td>
-                                <td>
-                                    <a href="back.php?do=modal_news">
+                                <td style="text-align:left;">
+                                    <a href="back.php?do=modal_news" style="text-align:left; width: 30%;">
                                         <?= $row['title']; ?>
                                     </a>
                                 </td>
-                                <td><input type="checkbox" name="sh[]" value="<?= $row['id']; ?>" <?=($row['sh'] == 1) ? 'checked' : ''; ?>>
+                                <td style="width: 15%;">
+                                    <input type="checkbox" name="sh[]" value="<?= $row['id']; ?>" <?=($row['sh'] == 1) ? 'checked' : ''; ?>>
                                 </td>
-                                <td><input type="checkbox" name="del[]" value="<?= $row['id']; ?>"></td>
+                                <td style="width: 15%;">
+                                    <input type="checkbox" name="del[]" value="<?= $row['id']; ?>">
+                                </td>
                                 <input type="hidden" name="id[]" value="<?= $row['id']; ?>">
                             </tr>
                             <?php
@@ -70,37 +73,37 @@
 
                 </form>
             </div>
-            
+
 
         </div>
         <div class="login-div">
-                <!-- <div class="log"><i class='bx bx-user-circle'></i></div> -->
-                <div class="fields">
-                    <div class="username">
-                        <i class='bx bx-user-plus'></i>
-                        <input type="text" class="user-input" placeholder="username" name="acc" id="acc">
-                    </div>
-                    <div class="password">
-                        <i class='bx bx-key'></i>
-                        <input type="password" class="pass-input" placeholder="password" name="pw" id="pw">
-                    </div>
-                    <div class="password">
-                        <i class='bx bx-key'></i>
-                        <input type="password" class="pass-input" placeholder="reconfirm password" name="pw2" id="pw2">
-                    </div>
-                    <div class="password">
-                        <i class='bx bx-envelope'></i>
-                        <input type="text" class="pass-input" placeholder="e-mail" name="email" id="email">
-                    </div>
+            <!-- <div class="log"><i class='bx bx-user-circle'></i></div> -->
+            <div class="fields">
+                <div class="username">
+                    <i class='bx bx-user-plus'></i>
+                    <input type="text" class="user-input" placeholder="username" name="acc" id="acc">
                 </div>
-                <div class="btn">
-                    <button class="signin-button login" onclick="reg()">register</button>
-                    <button class="signin-button reset" onclick="reset()">reset</button>
+                <div class="password">
+                    <i class='bx bx-key'></i>
+                    <input type="password" class="pass-input" placeholder="password" name="pw" id="pw">
                 </div>
+                <div class="password">
+                    <i class='bx bx-key'></i>
+                    <input type="password" class="pass-input" placeholder="reconfirm password" name="pw2" id="pw2">
+                </div>
+                <div class="password">
+                    <i class='bx bx-envelope'></i>
+                    <input type="text" class="pass-input" placeholder="e-mail" name="email" id="email">
+                </div>
+            </div>
+            <div class="btn">
+                <button class="signin-button login" onclick="reg()">register</button>
+                <button class="signin-button reset" onclick="reset()">reset</button>
+            </div>
 
 
-            </div>
-            </div>
+        </div>
+    </div>
 </body>
 
 </html>

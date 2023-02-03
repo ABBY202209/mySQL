@@ -167,19 +167,15 @@ include "./api/base.php"
         <div class="">
             <?php
             $do = $_GET['do'] ?? 'news';
-            // echo $do;
-            if ($do='modal_news') {
-                # code...
-                $file="./modal/". $do . ".php";
-            }else{
-                $file = "./back/" . $do . ".php";
-            }
-            
-            if (file_exists($file)) {
-                # code...
-                include $file;
+            if ($do == 'modal_news') {
+                include "./modal/modal_news.php";
             } else {
-                include "./back/news.php";
+                $file = "./back/" . $do . ".php";
+                if (file_exists($file)) {
+                    include $file;
+                } else {
+                    include "./back/news.php";
+                }
             }
             ?>
         </div>
