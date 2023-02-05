@@ -2,6 +2,7 @@
 <?php
 include_once "base.php";
 dd($_POST);
+$table = $_POST['table']; //寫這一行的可讀性會高一點
 
 // 方法一：宣告一個變數為空陣列，用來暫存值用的
 // $row=[];
@@ -30,8 +31,9 @@ if (!isset($_POST['id'])) {
    
 }
 
-$News->save($_POST);
-
+$$table->save($_POST);
 
 
 // to("../back.php?do=news");
+// to("../back.php?do=" . lcfirst($table));
+

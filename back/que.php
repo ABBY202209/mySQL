@@ -14,7 +14,7 @@ $subjects = $Que->all(['parent' => 0]);
     <div class="admin-div">
         <div class="fields">
             <legend><i class='bx bx-add-to-queue'></i>問卷管理</legend>
-            <form action="./api/edit_news.php" method="post">
+            <form action="./api/edit_que.php" method="post">
                 <table>
                     <tr>
                         <th>編號</th>
@@ -31,9 +31,7 @@ $subjects = $Que->all(['parent' => 0]);
                                 <?= $key + 1; ?>
                             </td>
                             <td style="text-align:left;">
-                                <a href="back.php?do=edit_que&id=<?= $subject['id']; ?>" style="text-align:left; width: 30%;">
-                                    <?= $subject['text']; ?>
-                                </a>
+                                <?= $subject['text']; ?>
                             </td>
                             <td style="width: 15%;">
                                 <input type="checkbox" name="sh[]" value="<?= $subject['id']; ?>" <?= ($subject['sh'] == 1) ? 'checked' : ''; ?>>
