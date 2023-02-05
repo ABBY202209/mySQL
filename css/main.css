@@ -10,6 +10,7 @@
     color: #302e4d;
     min-width: 150vh;
 }
+
 .signin-button {
     outline: none;
     border: none;
@@ -44,19 +45,23 @@
     display: flex;
     justify-content: space-evenly;
 }
-.pages{
+
+.pages {
     display: flex;
     padding: 15px 185px 22px 15px
 }
-.pages a{
+
+.pages a {
     text-decoration: none;
     text-align: center;
     width: 30px;
     height: 30px;
     border-radius: 50%;
     margin: 0 auto;
-    box-shadow:  0px 0px 0px 5px #ecf0f3, 4px 4px 7px #a7aaaf, -4px -4px 7px #fff;
-}.pages a:hover{
+    box-shadow: 0px 0px 0px 5px #ecf0f3, 4px 4px 7px #a7aaaf, -4px -4px 7px #fff;
+}
+
+.pages a:hover {
     background-color: #728C8A;
     box-shadow: inset 0.5px 0.5px 0.5px #cbced1, inset -0.5px -0.5px 0.5px #fff
 }
@@ -106,7 +111,7 @@
     text-align: center;
     box-shadow: 0.5px 0.5px 2px #b1b1b1, -0.5px -0.5px 2px #fff;
     border-radius: 12px;
-    
+
 
 }
 
@@ -117,13 +122,14 @@
     font-weight: 500;
     font-size: 18px;
     height: 30px;
-    
+
 }
 
 .news-div td:hover {
     background-color: #728C8A;
     box-shadow: inset 0.5px 0.5px 0.5px #cbced1, inset -0.5px -0.5px 0.5px #fff
 }
+
 .admin-div .password {
     margin: 10px;
     margin-bottom: 10px;
@@ -131,6 +137,7 @@
     box-shadow: inset 4px 4px 4px #cbced1, inset -4px -4px 4px #fff;
 
 }
+
 .admin-div .fields input {
     border: none;
     outline: none;
@@ -140,6 +147,7 @@
     padding: 5px 5px 5px 5px;
     width: 35%;
 }
+
 /* right */
 .login-div {
     width: 430px;
@@ -156,6 +164,7 @@
     padding: 0px 5px 5px 5px;
 
 }
+
 .login-div input {
     border: none;
     outline: none;
@@ -178,25 +187,27 @@
 
 }
 
-#type{
+#type {
     background-color: transparent;
     border: none;
     font-size: 16px;
     font-family: 'Noto Sans TC';
     font-weight: 500;
     padding: 10px 60px 8px 30px;
-   margin-left:4%;
+    margin-left: 4%;
 }
+
 #checkbox {
     transform: scale(2);
-    margin:30% 40% ;
+    margin: 30% 40%;
     opacity: 0.5;
 }
-#text{
+
+#text {
     resize: none;
     font-size: 16px;
     margin: 15px;
-    width: 440px; 
-   background-color: transparent;
-   border: none;
+    width: 320px;
+    background-color: transparent;
+    border: none;
 }
