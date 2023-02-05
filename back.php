@@ -160,8 +160,8 @@ include "./api/base.php"
                 <span class="show">
                     <?= date("Y-m-d (D)"); ?>
                 </span>
-                <span></span>
-                <span></span>
+                <span><?= $_SESSION['login']; ?></span>
+                <span>exit</span>
             </div>
         </div>
     </nav>

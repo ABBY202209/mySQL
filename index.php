@@ -1,6 +1,6 @@
 <?php
 include "./api/base.php"
-    ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,9 +14,7 @@ include "./api/base.php"
     <!-- css -->
     <link rel="stylesheet" href="./css/styles.css">
     <!-- jq -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
-        integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -94,7 +92,7 @@ include "./api/base.php"
                 if ($_SESSION['login'] == 'admin') {
                     # code...
                     // echo $_SESSION['login'];
-                    ?>
+            ?>
                     <a href="#" class="account tooltip-element" data-tooltip="1">
                         <i class='bx bx-user'></i>
                     </a>
@@ -113,8 +111,8 @@ include "./api/base.php"
                                     echo '<a href="./index.php?do=news"><h5>回首頁</h5></a>';
                                 }
                                 ?>
-                                
-                                
+
+
 
                             </div>
                         </div>
@@ -122,9 +120,9 @@ include "./api/base.php"
                             <i class='bx bx-log-out'></i>
                         </a>
                     </div>
-                    <?php
+                <?php
                 } else {
-                    ?>
+                ?>
                     <a href="#" class="account tooltip-element" data-tooltip="1">
                         <i class='bx bx-user'></i>
                     </a>
@@ -141,29 +139,26 @@ include "./api/base.php"
                         <a href="./api/logout.php" class="log-out">
                             <i class='bx bx-log-out'></i>
                         </a>
-                        <?php
+                    <?php
                 }
             } else {
-                ?>
+                    ?>
                     <a href="#" class="account tooltip-element" data-tooltip="1">
                         <i class='bx bx-user'></i>
                     </a>
                     <div class="admin-user tooltip-element" data-tooltip="2">
                         <a href="?do=login" class="log-out "><i class='bx bx-log-in'></i></a>
                     </div>
-                    <?php
-            }
-            ;
-            ?>
+                <?php
+            };
+                ?>
 
                 <div class="tooltip">
-                    <span class="show">
-                        <?= date("Y-m-d (D)"); ?>
-                    </span>
-                    <span></span>
-                    <span></span>
+                    <span class="show"><?= date("Y-m-d (D)"); ?></span>
+                    <span><?= (isset($_SESSION['login'])) ? $_SESSION['login']: "" ?></span>
+                    <span><?= (isset($_SESSION['login'])) ? 'log-out': 'log-in' ?></span>
                 </div>
-            </div>
+                    </div>
     </nav>
     <main>
         <div class="">

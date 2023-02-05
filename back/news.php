@@ -77,11 +77,11 @@
         <div class="login-div" style="height:700px; margin-top: 50px;">
             <!-- <div class="log"><i class='bx bx-user-circle'></i></div> -->
             <div class="fields">
-                <form action="./api/save_news.php" method="post" enctype="multipart/form-data">
+                <form action="./api/save_news.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
                     <div>
                         <div>標題</div>
                         <div class="password">
-                            <input type="text" class="pass-input" name="title" style="width:100%;font-size: 16px;margin-left:10px" >
+                            <input id="title" type="text" class="pass-input" name="title" style="width:100%;font-size: 16px;margin-left:10px" >
                         </div>
                     </div>
                     <div>
@@ -93,7 +93,7 @@
                     <div style="display:flex">
                         <div style="width:100px; margin-top:20px">圖片上傳</div>
 
-                        <input type="file" class="pass-input" name="img">
+                        <input id="img" type="file" class="pass-input" name="img">
 
                     </div>
             </div>

@@ -10,7 +10,6 @@
         .login-main {
 
             font-family: 'Poppins', 'Noto Sans TC';
-
             min-height: 100vh;
             display: flex;
             position: relative;
@@ -85,13 +84,16 @@
             background-color: var(--main-color-dark);
             box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #fff;
             transition: all 0.5s;
-            mlmargin-left: 20px;
+            margin-left: 20px;
         }
 
         .signin-button:hover.login {
             background-color: #B2BF4E;
         }
 
+        .signin-button:hover.reset {
+            background-color: #D95959;
+        }
         .signin-button:hover.reset {
             background-color: #D95959;
         }

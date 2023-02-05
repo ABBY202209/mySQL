@@ -41,9 +41,26 @@
     box-shadow: inset 2px 2px 2px #cbced1, inset -2px -2px 2px #fff;
 }
 
+.signin-button.que {
+    height: 30px;
+    width: 40px;
+    padding:inherit
+}
+
+.signin-button:hover.que {
+    color: #ffffff;
+    background-color: #56588C;
+    ;
+}
+
 .btn {
     display: flex;
     justify-content: space-evenly;
+}
+
+.btn.que {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .pages {
@@ -210,4 +227,9 @@
     width: 320px;
     background-color: transparent;
     border: none;
+}
+#options{
+    height:300px;
+    width:100% ; 
+    overflow:auto ;
 }

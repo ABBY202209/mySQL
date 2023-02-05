@@ -15,7 +15,10 @@ function reg() {
         'acc': $("#acc").val(),
         'pw': $("#pw").val(),
         'pw2': $("#pw2").val(),
-        'email': $("#email").val()
+        'email': $("#email").val(),
+        'title': $("#title").val(),
+        'text': $("#text").val(),
+        'img': $("#img").val()
     }
 
     // if (檢查欄是否有空白) {
@@ -48,4 +51,32 @@ function reg() {
         }
     }
 
+
 }
+
+// 新增問卷
+function addOption(){
+    console.log("hi");
+    let options=document.getElementById('options');
+    // let opt=document.createElement("div");//style="height:60px
+    let div=document.createElement('div');//password
+    let input=document.createElement('input');
+    // let numNode=document.createTextNode("選項");//項目的內容
+
+    // opt.setAttribute("style","height:300px;width:100% ; overflow:auto")//
+    div.setAttribute("class","password")//
+    div.setAttribute("style","width:320px")
+    input.setAttribute("class","pass-input")//input
+    input.setAttribute("name","option[]")
+    input.setAttribute("type","text")
+    input.setAttribute("style","width:100%;font-size: 16px;margin-left:10px")
+
+    // label.appendChild(numNode)
+    // opt.appendChild(div);
+    div.appendChild(input);
+
+    options.appendChild(div);
+    //options.innerHTML=options.innerHTML+opt
+    //console.log(options.innerHTML)
+    
+}    
