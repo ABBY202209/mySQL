@@ -13,6 +13,8 @@ include "./api/base.php"
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- css -->
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/main.css">
+
     <!-- jq -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
         integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
@@ -167,21 +169,20 @@ include "./api/base.php"
         <div class="">
             <?php
             $do = $_GET['do'] ?? 'news';
-            if ($do == 'modal_news') {
-                include "./modal/modal_news.php";
+
+            $file = "./back/" . $do . ".php";
+            if (file_exists($file)) {
+                include $file;
             } else {
-                $file = "./back/" . $do . ".php";
-                if (file_exists($file)) {
-                    include $file;
-                } else {
-                    include "./back/news.php";
-                }
+                include "./back/news.php";
             }
+
             ?>
         </div>
     </main>
 
-    <script src="./js/js.js"></script>
+    <script src="./js/nav.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

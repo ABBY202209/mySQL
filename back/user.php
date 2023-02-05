@@ -17,25 +17,28 @@
                 <form action="./api/edit.php" method="post">
                     <table>
                         <tr>
-                            <th style="width: 40%;">帳號</th>
-                            <th style="width: 40%;">密碼</th>
+                            <th style="width: 15%;">編號</th>
+                            <th style="width: 35%;">帳號</th>
+                            <th style="width: 35%;">密碼</th>
                             <th style="width: 15%;">刪除</th>
                         </tr>
                         <?php
-                        foreach ($rows as $row) {
+                        foreach ($rows as $key => $row) {
                             ?>
                             <tr>
-                                <td>
-                                <input type="text" name="acc[]" value="<?=$row['acc'];?>" style="width:95%">
+                                <td style="width: 15%;">
+                                    <?= $key + 1; ?>
                                 </td>
-                                
+                                <td>
+                                    <input type="text" name="acc[]" value="<?= $row['acc']; ?>" style="width:70%">
+                                </td>
                                 <td>
                                     <div class="password">
                                         <input type="password" name="pw[]" value="<?= $row['pw']; ?>">
                                     </div>
                                 </td>
                                 <td><input type="checkbox" name="del[]" value="<?= $row['id']; ?>"></td>
-                                <input type="hidden" name="id[]" value="<?=$row['id'];?>">
+                                <input type="hidden" name="id[]" value="<?= $row['id']; ?>">
                             </tr>
                             <?php
                         }
@@ -60,14 +63,14 @@
                         }
                         ?>
                     </div>
-            </div>
-            <div class="btn">
-                <input type="hidden" name="table" value="User">
-                <input class="signin-button login" type="submit" value="submit">
-                <input class="signin-button reset" type="reset" value="reset">
+                    <div class="btn">
+                        <input type="hidden" name="table" value="User">
+                        <input class="signin-button login" type="submit" value="submit" id="edit_user">
+                        <input class="signin-button reset" type="reset" value="reset">
 
+                    </div>
+                </form>
             </div>
-            </form>
 
         </div>
         <div class="login-div">
@@ -100,52 +103,6 @@
     </div>
 
 </body>
-<script>
-    //清除
-    function reset() {
-        $("#acc,#pw,#pw2,#email").val("");
-    }
 
-    function reg() {
-        //建變數
-        let user = {
-            'acc': $("#acc").val(),
-            'pw': $("#pw").val(),
-            'pw2': $("#pw2").val(),
-            'email': $("#email").val()
-        }
-
-        // if (檢查欄是否有空白) {
-        if (user.acc == '' || user.pw == '' || user.pw2 == '' || user.email == '') {
-            alert("不可空白")
-        } else {
-            // if (密碼是否相同) {
-            if (user.pw == user.pw2) {
-                //相同
-                // $.post("./api/chk_acc.php",{acc:user.acc},(result)=>{
-                $.post("./api/chk_acc.php", { acc: user.acc, pw: user.pw, email: user.email }, (result) => {
-
-                    // if (檢查帳號是否重覆) {
-                    if (result.status === 'error') {
-                        alert("帳號重覆");
-
-
-                    } else {
-                        //新增帳號
-                        $.post("./api/reg.php", user, () => {
-                            alert("新增完成");
-                            // reset();
-                            window.location.reload();//刷新頁面
-                        })
-                    }
-                })
-            } else {
-                //不相同
-                alert("密碼錯誤");
-            }
-        }
-
-    }
-</script>
 
 </html>

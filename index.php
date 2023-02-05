@@ -181,7 +181,8 @@ include "./api/base.php"
         </div>
     </main>
 
-    <script src="./js/js.js"></script>
+    <script src="./js/nav.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

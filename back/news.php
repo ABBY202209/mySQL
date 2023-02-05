@@ -1,10 +1,8 @@
-<link rel="stylesheet" href="./css/main.css">
-
 <body>
     <?php
     //頁數
     $all = $News->count();
-    $div = 6;
+    $div = 4;
     $pages = ceil($all / $div);
     $now = $_GET['p'] ?? 1;
     $start = ($now - 1) * $div;
@@ -12,11 +10,9 @@
     ?>
     <div class="login-main">
         <div class="admin-div">
-
             <div class="fields">
                 <legend><i class='bx bx-list-plus'></i>最新消息管理</legend>
                 <form action="./api/edit.php" method="post">
-
                     <table>
                         <tr>
                             <th>編號</th>
@@ -32,7 +28,7 @@
                                     <?= $key + 1; ?>
                                 </td>
                                 <td style="text-align:left;">
-                                    <a href="back.php?do=modal_news" style="text-align:left; width: 30%;">
+                                    <a href="back.php?do=edit_news" style="text-align:left; width: 30%;">
                                         <?= $row['title']; ?>
                                     </a>
                                 </td>
@@ -50,24 +46,26 @@
                     </table>
                     <!-- 分頁 -->
                     <div class="pages">
-                        <?php
-                        if (($now - 1) > 0) {
-                            $pre = $now - 1;
-                            echo "<a href='back.php?do=news&p=$pre'><</a>";
-                        }
-                        for ($i = 1; $i <= $pages; $i++) {
-                            # code...
-                            $size = ($i == $now) ? "24px" : "16px";
-                            echo "<a href='back.php?do=news&p=$i' style='font-size:$size'>$i</a>";
-                        }
-                        if (($now + 1) <= $pages) {
-                            # code...
-                            $next = $now + 1;
-                            echo "<a href='back.php?do=news&p=$next'>></a>";
+                    <?php
+                        if ($pages > 1) {
+                            if (($now - 1) > 0) {
+                                $pre = $now - 1;
+                                echo "<a href='back.php?do=user&p=$pre'><</a>";
+                            }
+                            for ($i = 1; $i <= $pages; $i++) {
+                                $size = ($i == $now) ? "24px" : "16px";
+                                echo "<a href='back.php?do=user&p=$i' style='font-size:$size'>$i</a>";
+                            }
+                            if (($now + 1) <= $pages) {
+                                $next = $now + 1;
+                                echo "<a href='back.php?do=user&p=$next'>></a>";
+                            }
                         }
                         ?>
                     </div>
+
                     <div class="btn">
+                        <input type="hidden" name="table" value="News">
                         <input class="signin-button login" type="submit" value="submit">
                     </div>
 

@@ -35,7 +35,7 @@ foreach ($_POST['id'] as $idx => $id) {
         $row = $$table->find($id);
         //針對不一樣的地方swtich
         switch ($table) {
-            case "Title":
+            case "News":
                 # code...
                 $row['text'] = $_POST['text'][$idx];
                 $row['sh'] = (isset($_POST['sh']) && $_POST['sh'] == $id) ? 1 : 0; //判斷是否一樣的，如果是一樣的是1；不一樣的改0
@@ -70,4 +70,4 @@ foreach ($_POST['id'] as $idx => $id) {
         
     }
 }
-to("../back.php?do=" . lcfirst($table));
+// to("../back.php?do=" . lcfirst($table));
