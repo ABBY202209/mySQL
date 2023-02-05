@@ -31,7 +31,9 @@ $subjects = $Que->all(['parent' => 0]);
                                 <?= $key + 1; ?>
                             </td>
                             <td style="text-align:left;">
-                                <?= $subject['text']; ?>
+                                <a href="back.php?do=edit_que&id=<?= $subject['id']; ?>" style="text-align:left; width: 30%;">
+                                    <?= $subject['text']; ?>
+                                </a>
                             </td>
                             <td style="width: 15%;">
                                 <input type="checkbox" name="sh[]" value="<?= $subject['id']; ?>" <?= ($subject['sh'] == 1) ? 'checked' : ''; ?>>

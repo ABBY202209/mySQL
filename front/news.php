@@ -15,80 +15,212 @@
     <div class="TabbedPanelsContentGroup" style="font-size:20px;">
         <div class="TabbedPanelsContent">
             <?php
-            $all = $News->count(['type' => 1]);
-            // dd($all);
-            $div = 4;
-            $pages = ceil($all / $div);
-            $now = $_GET['p'] ?? 1;
-            $start = ($now - 1) * $div;
-            $rows = $News->all(" limit $start , $div");
-            $subjects = $News->all(['type' => 1]);
+            $subjects = $News->all(['type' => 1, 'sh'=>1, 'sh'=>1]);
             ?>
             <table>
-                <tr  >
+                <tr>
                     <th style="padding: 10px;">編號</th>
                     <th style="padding: 10px;">標題</th>
-                    
+                    <th style="padding: 10px;">點閱數</th>
                 </tr>
                 <?php
-                foreach ($rows as $key => $row) {
+                foreach ($subjects as $key => $subject) {
                 ?>
                     <tr>
                         <td style="width: 15%;text-align: center">
                             <?= $key + 1; ?>
                         </td>
                         <td style="text-align:left;">
-                            <a href="back.php?do=edit_news&id=<?= $row['id']; ?>" style="text-align:left; width: 30%;text-decoration:none">
-                                <?= $row['title']; ?>
+                            <a href="index.php?do=readed_news&id=<?= $subject['id']; ?>" style="text-align:left; width: 30%;text-decoration:none">
+                                <?= $subject['title']; ?>
                             </a>
                         </td>
-                        
-                        
+                        <td style="width: 15%;text-align: center">
+                        <?= $subject['readed']; ?>
+                        </td>
                     </tr>
                 <?php
                 }
                 ?>
             </table>
-            <div class="pages">
-                        <?php
-                        if ($pages > 1) {
-                            if (($now - 1) > 0) {
-                                $pre = $now - 1;
-                                echo "<a href='index.php?do=news&p=$pre'><</a>";
-                            }
-                            for ($i = 1; $i <= $pages; $i++) {
-                                $size = ($i == $now) ? "24px" : "16px";
-                                echo "<a href='index.php?do=news&p=$i' style='font-size:$size'>$i</a>";
-                            }
-                            if (($now + 1) <= $pages) {
-                                $next = $now + 1;
-                                echo "<a href='index.php?do=news&p=$next'>></a>";
-                            }
-                        }
-                        ?>
-                    </div>
-        </div>
-        <div class="TabbedPanelsContent">
 
         </div>
         <div class="TabbedPanelsContent">
+            <?php
+            $subjects = $News->all(['type' => 2, 'sh'=>1]);
+            ?>
+            <table>
+                <tr>
+                    <th style="padding: 10px;">編號</th>
+                    <th style="padding: 10px;">標題</th>
 
+                </tr>
+                <?php
+                foreach ($subjects as $key => $subject) {
+                ?>
+                    <tr>
+                        <td style="width: 15%;text-align: center">
+                            <?= $key + 1; ?>
+                        </td>
+                        <td style="text-align:left;">
+                            <a href="index.php?do=readed_news&id=<?= $subject['id']; ?>" style="text-align:left; width: 30%;text-decoration:none">
+                                <?= $subject['title']; ?>
+                            </a>
+                        </td>
+                    </tr>
+                <?php
+                }
+                ?>
+            </table>
         </div>
         <div class="TabbedPanelsContent">
-
+            <?php
+            $subjects = $News->all(['type' => 3, 'sh'=>1]);
+            ?>
+            <table>
+                <tr>
+                    <th style="padding: 10px;">編號</th>
+                    <th style="padding: 10px;">標題</th>
+                </tr>
+                <?php
+                foreach ($subjects as $key => $subject) {
+                ?>
+                    <tr>
+                        <td style="width: 15%;text-align: center">
+                            <?= $key + 1; ?>
+                        </td>
+                        <td style="text-align:left;">
+                            <a href="index.php?do=readed_news&id=<?= $subject['id']; ?>" style="text-align:left; width: 30%;text-decoration:none">
+                                <?= $subject['title']; ?>
+                            </a>
+                        </td>
+                    </tr>
+                <?php
+                }
+                ?>
+            </table>
         </div>
         <div class="TabbedPanelsContent">
+            <?php
+            $subjects = $News->all(['type' => 4, 'sh'=>1]);
+            ?>
+            <table>
+                <tr>
+                    <th style="padding: 10px;">編號</th>
+                    <th style="padding: 10px;">標題</th>
 
+                </tr>
+                <?php
+                foreach ($subjects as $key => $subject) {
+                ?>
+                    <tr>
+                        <td style="width: 15%;text-align: center">
+                            <?= $key + 1; ?>
+                        </td>
+                        <td style="text-align:left;">
+                            <a href="index.php?do=readed_news&id=<?= $subject['id']; ?>" style="text-align:left; width: 30%;text-decoration:none">
+                                <?= $subject['title']; ?>
+                            </a>
+                        </td>
+
+
+                    </tr>
+                <?php
+                }
+                ?>
+            </table>
         </div>
         <div class="TabbedPanelsContent">
+            <?php
+            $subjects = $News->all(['type' => 5, 'sh'=>1]);
+            ?>
+            <table>
+                <tr>
+                    <th style="padding: 10px;">編號</th>
+                    <th style="padding: 10px;">標題</th>
 
+                </tr>
+                <?php
+                foreach ($subjects as $key => $subject) {
+                ?>
+                    <tr>
+                        <td style="width: 15%;text-align: center">
+                            <?= $key + 1; ?>
+                        </td>
+                        <td style="text-align:left;">
+                            <a href="index.php?do=readed_news&id=<?= $subject['id']; ?>" style="text-align:left; width: 30%;text-decoration:none">
+                                <?= $subject['title']; ?>
+                            </a>
+                        </td>
+
+
+                    </tr>
+                <?php
+                }
+                ?>
+            </table>
         </div>
         <div class="TabbedPanelsContent">
+            <?php
+            $subjects = $News->all(['type' => 6, 'sh'=>1]);
+            ?>
+            <table>
+                <tr>
+                    <th style="padding: 10px;">編號</th>
+                    <th style="padding: 10px;">標題</th>
 
+                </tr>
+                <?php
+                foreach ($subjects as $key => $subject) {
+                ?>
+                    <tr>
+                        <td style="width: 15%;text-align: center">
+                            <?= $key + 1; ?>
+                        </td>
+                        <td style="text-align:left;">
+                            <a href="index.php?do=readed_news&id=<?= $subject['id']; ?>" style="text-align:left; width: 30%;text-decoration:none">
+                                <?= $subject['title']; ?>
+                            </a>
+                        </td>
+
+
+                    </tr>
+                <?php
+                }
+                ?>
+            </table>
         </div>
         <div class="TabbedPanelsContent">
+            <?php
+            $subjects = $News->all(['type' => 7, 'sh'=>1]);
+            ?>
+            <table>
+                <tr>
+                    <th style="padding: 10px;">編號</th>
+                    <th style="padding: 10px;">標題</th>
 
+                </tr>
+                <?php
+                foreach ($subjects as $key => $subject) {
+                ?>
+                    <tr>
+                        <td style="width: 15%;text-align: center">
+                            <?= $key + 1; ?>
+                        </td>
+                        <td style="text-align:left;">
+                            <a href="index.php?do=readed_news&id=<?= $subject['id']; ?>" style="text-align:left; width: 30%;text-decoration:none">
+                                <?= $subject['title']; ?>
+                            </a>
+                        </td>
+
+
+                    </tr>
+                <?php
+                }
+                ?>
+            </table>
         </div>
+        
     </div>
 </div>
 <script type="text/javascript">
