@@ -1,7 +1,10 @@
 <?php
 $row = $News->find($_GET['id']);
-$type = $Type->find($_GET['id']);
+// dd($row);
+$type = $Type->find($row['type']);
+// dd($type);
 $row['type'] = $type['type'];
+
 
 
 ?>

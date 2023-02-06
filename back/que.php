@@ -6,8 +6,8 @@ $div = 4;
 $pages = ceil($all / $div);
 $now = $_GET['p'] ?? 1;
 $start = ($now - 1) * $div;
-$rows = $Que->all(" limit $start , $div");
-$subjects = $Que->all(['parent' => 0]);
+$rows = $Que->all(['parent' => 0]," limit $start,$div");
+// $subjects = $Que->all(['parent' => 0]);
 // dd($row);
 ?>
 <div class="login-main">
@@ -23,7 +23,7 @@ $subjects = $Que->all(['parent' => 0]);
                         <th>刪除</th>
                     </tr>
                     <?php
-                    foreach ($subjects as $key => $subject) {
+                    foreach ($rows as $key => $row) {
                         # code...
                     ?>
                         <tr>
@@ -31,17 +31,17 @@ $subjects = $Que->all(['parent' => 0]);
                                 <?= $key + 1; ?>
                             </td>
                             <td style="text-align:left;">
-                                <a href="back.php?do=edit_que&id=<?= $subject['id']; ?>" style="text-align:left; width: 30%;">
-                                    <?= $subject['text']; ?>
+                                <a href="back.php?do=edit_que&id=<?= $row['id']; ?>" style="text-align:left; width: 30%;">
+                                    <?= $row['text']; ?>
                                 </a>
                             </td>
                             <td style="width: 15%;">
-                                <input type="checkbox" name="sh[]" value="<?= $subject['id']; ?>" <?= ($subject['sh'] == 1) ? 'checked' : ''; ?>>
+                                <input type="checkbox" name="sh[]" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>>
                             </td>
                             <td style="width: 15%;">
-                                <input type="checkbox" name="del[]" value="<?= $subject['id']; ?>">
+                                <input type="checkbox" name="del[]" value="<?= $row['id']; ?>">
                             </td>
-                            <input type="hidden" name="id[]" value="<?= $subject['id']; ?>">
+                            <input type="hidden" name="id[]" value="<?= $row['id']; ?>">
                         </tr>
                     <?php
                     }
