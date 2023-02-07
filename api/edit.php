@@ -70,4 +70,4 @@ foreach ($_POST['id'] as $idx => $id) {
         
     }
 }
-// to("../back.php?do=" . lcfirst($table));
+to("../back.php?do=" . lcfirst($table));
