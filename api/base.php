@@ -64,7 +64,7 @@ class DB{
             $cols = array_keys($array);
             $sql = "insert into $this->table(`" . join("`,`", $cols) . "`) values('" . join("','", $array) . "')";
         }
-        echo $sql;
+        // echo $sql;
         $this->pdo->exec($sql);
     }
     public function del($id){

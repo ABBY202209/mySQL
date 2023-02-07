@@ -84,7 +84,7 @@ $options = $Que->all(['parent' => $_GET['id']]);
 <div class="login-main">
     <div class="login-div">
         <div class="fields">
-                <div style="display: flex; font-size:40px; font-weight:700; width:780px;">
+                <div style="display: flex; font-size:40px; font-weight:700; width:780px;height:140px;">
                     <?= $row['text']; ?>
                 </div>
                 <div style="display: flex;flex-direction: column;width:600px; font-size:30px; margin-top:20px">
