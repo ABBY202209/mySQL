@@ -31,9 +31,9 @@ $rows = $Que->all(['parent' => 0]," limit $start,$div");
                                 <?= $key + 1; ?>
                             </td>
                             <td style="text-align:left;">
-                                <a href="back.php?do=edit_que&id=<?= $row['id']; ?>" style="text-align:left; width: 30%;">
+                                
                                     <?= $row['text']; ?>
-                                </a>
+                                
                             </td>
                             <td style="width: 15%;">
                                 <input type="checkbox" name="sh[]" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>>
